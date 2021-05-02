@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { StyleSheet, TouchableOpacity, Text, View } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
@@ -26,10 +26,11 @@ export default function Item({
   console.log(className);
 
   return (
-    <View style={styles.container}>
-      <Text style={className} onPress={() => changeDoneHandler(item.key)}>
-        {item.text}
-      </Text>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={() => changeDoneHandler(item.key)}
+    >
+      <Text style={className}>{item.text}</Text>
       <MaterialIcons
         name="delete"
         size={18}
@@ -37,19 +38,21 @@ export default function Item({
         color="#333"
         onPress={() => pressRemoveHandler(item.key)}
       />
-    </View>
+    </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    padding: 16,
     marginTop: 16,
     borderColor: "#bbb",
     borderWidth: 1,
     borderRadius: 5,
+    padding: 16,
     flexDirection: "row",
+    justifyContent: "center",
+    alignContent: "center",
   },
   text: {
     flex: 1,
