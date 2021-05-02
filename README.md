@@ -1,6 +1,6 @@
 # Introduction
 
-The Shopping list is an exercise developed by myself to have a first approaches of React Native.
+The Shopping list is an exercise developed by myself to have a first approach to React Native.
 
 It uses Expo which make building and develop React Native apps targeting different platforms easy.
 
